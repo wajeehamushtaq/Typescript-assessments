@@ -14,7 +14,6 @@ function parseDate(remark: string): string{
     else{
         return 'Date cannot be found'
     }
-
 }
 
 
