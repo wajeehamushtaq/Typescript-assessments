@@ -1,0 +1,82 @@
+A string is immutable, index-based and iterable
+
+str = "Hello"
+str[0] - means H
+str[0] = "W" - cannot do that
+
+my_dict = {}
+other_dict = dict()
+print(my_dict == {})        # Output: True
+print(other_dict == {})    # Output: True
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = thisdict["model"]
+x = thisdict.get("model")
+thisdict.keys()
+thisdict.update({"year": 2020})
+thisdict.pop("model")
+
+
+-- loop through dictionary
+for x in thisdict.keys():
+    print(x)
+
+for x in thisdict.values():
+    print(x)
+
+for x in thisdict.items():
+    print(x)
+
+## You cannot copy a dictionary simply by typing dict2 = dict1, because: dict2 will only be a reference to dict1, and changes made in dict1 will automatically also be made in dict2.
+
+mydict = thisdict.copy()
+mydict = dict(thisdict)
+
+## Nested dictionary
+child1 = {
+  "name" : "Emil",
+  "year" : 2004
+}
+child2 = {
+  "name" : "Tobias",
+  "year" : 2007
+}
+child3 = {
+  "name" : "Linus",
+  "year" : 2011
+}
+
+myfamily = {
+  "child1" : child1,
+  "child2" : child2,
+  "child3" : child3
+}
+print(myfamily["child2"]["name"])
+
+Loop through nested dictionary
+for x, obj in myfamily.items():
+  print(x)
+
+  for y in obj:
+    print(y + ':', obj[y])
+
+-------------------------
+Why is dictionary lookup O(1) on average?
+
+A dictionary uses a hash table.
+Each key is passed through a hash function which maps it to an index in memory.
+Because this index is computed directly, lookup does not require scanning elements, making it O(1) on average.
+
+Collisions can happen
+
+Python resolves collisions using open addressing
+
+Worst case can be O(n), but with a good hash function and resizing, it’s rare
+
+📌 Final one-liner:
+
+“Dictionary lookup is O(1) on average due to direct index access via hashing.”
