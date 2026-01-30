@@ -1,0 +1,24 @@
+Two pointer techniques
+
+- you need to compare both ends
+- data is sorted
+- to avoid nested loop
+
+left = 0
+right = len(arr) - 1
+
+O(n)
+
+- Compare palindrome
+- compare sorted array
+
+Why does two-pointer technique work only on sorted arrays for sum problems?
+
+Two-pointer technique relies on the sorted order to make decisions.
+When the sum is too small, moving the left pointer increases the sum.
+When the sum is too large, moving the right pointer decreases the sum.
+This predictable behavior is only possible because the array is sorted.
+
+Final one-liner:
+
+“Two pointers work on sorted arrays because pointer movement has a predictable effect on the sum.”
