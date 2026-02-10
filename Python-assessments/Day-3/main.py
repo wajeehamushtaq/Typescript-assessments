@@ -1,4 +1,4 @@
-# 1: Validd palindrome
+# 1: Valid palindrome
 str = "madam"
 
 def is_palindrom(str):
@@ -61,6 +61,47 @@ def remove_duplicates(arr):
             arr[write_ptr] = arr[read_ptr]
             write_ptr += 1
     
-    return arr[:write_ptr]   # or return write_ptr
+    return arr[:write_ptr]   # or return write_ptr & : means start or 0 index
 
 print("remove duplicates", remove_duplicates([1,2,2,3,4,4]))
+# -------------------------------------------------------------
+# 5: Pattern 4 (Interview): 3Sum
+# Find triplets = 0
+# Input: [-1,0,1,2,-1,-4]
+# Output: [-1,-1,2], [-1,0,1]
+
+# Fix one number + find Two Sum for the rest
+def three_sum(nums):
+    nums.sort()
+    result = []
+
+    for i in range(len(nums) - 2):
+        # Skip duplicate fixed elements
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+
+        left = i + 1
+        right = len(nums) - 1
+
+        while left < right:
+            total = nums[i] + nums[left] + nums[right]
+
+            if total == 0:
+                result.append([nums[i], nums[left], nums[right]])
+                left += 1
+                right -= 1
+
+                # Skip duplicates
+                while left < right and nums[left] == nums[left - 1]:
+                    left += 1
+
+            elif total < 0:
+                left += 1
+            else:
+                right -= 1
+
+    return result
+
+
+print("Threes sum", three_sum([-1,0,1,2,-1,-4]))
+

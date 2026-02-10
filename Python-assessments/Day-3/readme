@@ -4,6 +4,11 @@ Two pointer techniques
 - data is sorted
 - to avoid nested loop
 
+This pattern is used when:
+- Array is sorted
+- You need pair / subarray / palindrome / remove duplicates
+- Optimize from O(n²) → O(n)
+
 left = 0
 right = len(arr) - 1
 

@@ -74,3 +74,6 @@ Recalculate sum/substring again and again ❌
 
 Sliding window:
 Add one element → remove one element → reuse result ✅
+
+-----------------------------------
+Sliding window fails with negative numbers because sum is no longer monotonic — expanding may decrease sum and shrinking may increase sum, breaking the window logic.
