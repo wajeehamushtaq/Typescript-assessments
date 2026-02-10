@@ -1,0 +1,76 @@
+Sliding Window
+
+Instead of checking all subarrays (❌ O(n²)), we maintain a window:
+
+[left ........ right]
+
+
+We:
+Expand window → right += 1
+Shrink window → left += 1
+# --------------------------
+
+When to Use Sliding Window
+Use it when the problem asks for:
+Subarray
+Substring
+Longest / Shortest
+Sum / Count / Condition
+# ----------------------------------
+
+🔹 Type 1: Fixed Window Size
+
+Window size = constant k
+Example: Maximum sum of subarray of size k
+Time: O(n)
+
+window_sum = 0
+left = 0
+
+for right in range(len(arr)):
+    window_sum += arr[right]
+    
+    if right - left + 1 == target:
+        window_sum -= arr[left]
+        left += 1
+
+🔹 Type 2: Variable Window Size
+
+Window size changes based on condition
+Example: Longest substring without repeating characters
+
+left = 0
+
+for right in range(len(arr)):
+    # expand window
+
+    while(condition_not_met):
+        # shrink window
+        left+=1
+
+# -----------------------------------------
+
+Goal,Window Type,Strategy
+Fixed Size k,Fixed,Use if right >= k - 1 to start sliding.
+Max/Longest,Variable,"Expand right until invalid, then while shrink left."
+Min/Smallest,Variable,"Expand right until valid, then while shrink left to optimize."
+
+| Problem         | Time | Space |
+| --------------- | ---- | ----- |
+| Fixed window    | O(n) | O(1)  |
+| Variable window | O(n) | O(k)  |
+
+--------------------------------------------------
+
+Why is sliding window better than brute force for subarray / substring problems?
+Brute force recalculates every possible subarray, leading to O(n²) time.
+Sliding window avoids repeated work by reusing previous computations.
+We expand and shrink the window incrementally, reducing time complexity to O(n).
+
+Simple explanation
+Brute force:
+Recalculate sum/substring again and again ❌
+
+
+Sliding window:
+Add one element → remove one element → reuse result ✅

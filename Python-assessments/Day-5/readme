@@ -1,0 +1,39 @@
+Prefix Sum technique
+
+Pre-computational to answer the range or subarray questions
+Instead of recalculating sums again and again, we store cumulative sums.
+
+Example
+arr = [2, 4, 6, 8]
+prefix = [2, 6, 12, 20]
+
+Meaning:
+prefix[i] = sum of elements from index 0 to i
+
+prefix = [0] * len(arr)
+prefix[0] = arr[0]
+
+for i in range(1, len(arr)):
+    prefix[i] = prefix[i - 1] + arr[i]
+
+
+Prefix Sum + HashMap (🔥 Very Important)
+This combo solves:
+Subarray sum equals K
+Continuous subarrays
+Zero sum subarrays
+
+------------------------------------------------------
+
+Pattern You Must Remember
+
+This is VERY IMPORTANT — memorize this.
+
+prefix_sum += num
+
+if prefix_sum - k in hashmap:
+    count += hashmap[prefix_sum - k]
+
+hashmap[prefix_sum] += 1
+
+for zero sum, k = 0
