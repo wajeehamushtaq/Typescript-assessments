@@ -1,0 +1,16 @@
+Stack Pattern
+
+ LIFO - Last In First Out
+
+ All operations of stack is O(n)
+
+
+Where Stack is Used
+- Very common in interviews:
+- Parentheses validation
+- Next Greater Element
+- Monotonic stack
+- Undo/Redo
+- Expression evaluation
+- Largest rectangle in histogram
+- Daily Temperatures
