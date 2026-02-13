@@ -1,0 +1,28 @@
+Binary Search Pattern
+
+Used to search in a sorted array by repeatedly dividing the search space into half.
+Instead of checking every element → O(n)
+Binary Search → O(log n) 
+
+When can we use Binary Search?
+- Array is sorted
+- Searching for position / value
+- Need minimum / maximum satisfying condition
+- Search space is monotonic (True/False pattern)
+
+Avoid Overflow - mid = left + (right - left) // 2
+
+```
+def binary_search(arr, target):
+    left, right = 0 , len(arr)-1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+```
+
