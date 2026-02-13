@@ -14,3 +14,10 @@ Where Stack is Used
 - Expression evaluation
 - Largest rectangle in histogram
 - Daily Temperatures
+--------------------------------------
+A Monotonic Stack is a stack that always remains in a specific order:
+
+Monotonic Increasing Stack → elements increase (small → big)
+Monotonic Decreasing Stack → elements decrease (big → small)
+
+We pop elements that break this order.
